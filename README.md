@@ -31,12 +31,12 @@ and then add this :
 tha same as sending simple packet but you must add this on your main project
 
      HINSTANCE DLLHandle;
-     typedef int(*lib)(char [MAX_ADAPTER]);
+     typedef int(*lib)(char [1024], char, char [MAX_ADAPTER]);
      lib libgnuemu_packet;
      DLLHandle = LoadLibrary("libgnuemu_packets.dll");
 
      libgnuemu_packet = (lib)GetProcAddress(DLLHandle,"send_queue_packet");
-     libgnuemu_packet("YOUR ADAPTER");
+     libgnuemu_packet("queue_file" , "queue_msg", "Your_ADAPTER");
 
      FreeLibrary(DLLHandle);
 
