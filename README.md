@@ -34,7 +34,7 @@ and then add this :
 tha same as sending simple packet but you must add this on your main project
 
      HINSTANCE DLLHandle;
-     typedef int(*lib)(char [1024], char, char [MAX_ADAPTER]);
+     typedef int(*lib)(char [1024], char [100], char [MAX_ADAPTER]);
      lib libgnuemu_packet;
      DLLHandle = LoadLibrary("libgnuemu_packets.dll");
 
