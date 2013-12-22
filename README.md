@@ -10,7 +10,7 @@ make sur that you have <b>libgnuemu_packets.dll</b> in same folder as your appli
 
 than in your main project application add :
 
-Fisrt define the MAX_ADAPTER  
+First define the MAX_ADAPTER  
 
 use #define MAX_ADAPTER 1024 
 and then add this :
