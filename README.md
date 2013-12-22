@@ -3,6 +3,8 @@ Libgnuemu_packet
 
 Lib for sending packets and queue messages written in C . based on pcap
 
+must download tha pcap lib 
+
 #Sending simple packet 
 make sur that you have <b>libgnuemu_packets.dll</b> in same folder as your application.
 
@@ -19,9 +21,27 @@ and then add this :
      DLLHandle = LoadLibrary("libgnuemu_packets.dll");
 
      libgnuemu_packet = (lib)GetProcAddress(DLLHandle,"send_test_packets");
-     libgnuemu_packet("testing adapter");
+     libgnuemu_packet("YOUR ADAPTER");
 
      FreeLibrary(DLLHandle);
 
      return;
+     
+#Sending queue message
+tha same as sending simple packet but you must add this on your main project
+
+     HINSTANCE DLLHandle;
+     typedef int(*lib)(char [MAX_ADAPTER]);
+     lib libgnuemu_packet;
+     DLLHandle = LoadLibrary("libgnuemu_packets.dll");
+
+     libgnuemu_packet = (lib)GetProcAddress(DLLHandle,"send_queue_packet");
+     libgnuemu_packet("YOUR ADAPTER");
+
+     FreeLibrary(DLLHandle);
+
+     return;
+     
+
+     
      
