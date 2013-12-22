@@ -6,7 +6,7 @@ Lib for sending packets and queue messages written in C . based on pcap
 must download tha pcap lib 
 
 #Sending simple packet 
-make sur that you have <b>libgnuemu_packets.dll</b> in same folder as your application.
+make sure that you have <b>libgnuemu_packets.dll</b> in the same folder as your application.
 
 than in your main project application add :
 
